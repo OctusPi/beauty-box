@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('appointments', function (Blueprint $table) {
+        Schema::create('billing_plans', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('custumer_id')->constrained('customers');
-            $table->foreignId('employee_id')->constrained('employees');
-            $table->foreignId('service_id')->constrained('services');
+            $table->string('code');
+            $table->dateTime('date_payment');
+            $table->decimal('value_payment', 8, 2);
+            $table->integer('method_payment'); //pix, cartão, transferencia, especie
             $table->foreignId('enterprise_id')->constrained('enterprises');
-            $table->dateTime('date_hour_start');
-            $table->dateTime('date_hour_end');
-            $table->integer('status')->default(1);
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('appointments');
+        Schema::dropIfExists('billing_plans');
     }
 };
