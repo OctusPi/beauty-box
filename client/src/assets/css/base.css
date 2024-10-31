@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme Colors */
+  --primary-color-light: #51E5FF; /* Azul claro */
+  --secondary-color-light: #440381; /* Roxo escuro */
+  --accent-color-light: #EC368D; /* Rosa vibrante */
+  --background-color-light: #FFFFFF; /* Fundo principal claro */
+  --background-secondary-color-light: #F7F7F7; /* Fundo secundário claro */
+  --text-color-light: #000000; /* Texto escuro */
+  --muted-text-color-light: #6c757d; /* Texto mais suave */
+
+  /* Dark Theme Colors */
+  --primary-color-dark: #51E5FF; /* Azul brilhante */
+  --secondary-color-dark: #440381; /* Roxo escuro */
+  --accent-color-dark: #EC368D; /* Rosa vibrante */
+  --background-color-dark: #1E1E1E; /* Fundo principal escuro */
+  --background-secondary-color-dark: #2A2A2A; /* Fundo secundário escuro */
+  --text-color-dark: #FFFFFF; /* Texto claro */
+  --muted-text-color-dark: #b0b3b8; /* Texto mais suave */
+
+  /* Shared Colors */
+  --error-color: #FFA5A5; /* Rosa claro */
+  --success-color: #4CAF50; /* Verde para sucesso */
+}
+
+/* Light Theme */
+.light-theme {
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --accent-color: var(--accent-color-light);
+  --background-color: var(--background-color-light);
+  --background-secondary-color: var(--background-secondary-color-light);
+  --text-color: var(--text-color-light);
+  --muted-text-color: var(--muted-text-color-light);
+}
+
+/* Dark Theme */
+.dark-theme {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --accent-color: var(--accent-color-dark);
+  --background-color: var(--background-color-dark);
+  --background-secondary-color: var(--background-secondary-color-dark);
+  --text-color: var(--text-color-dark);
+  --muted-text-color: var(--muted-text-color-dark);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text-color);
+  background: var(--background-color);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
