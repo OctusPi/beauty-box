@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('code');
             $table->dateTime('date_payment');
-            $table->decimal('value_payment', 8, 2);
+            $table->decimal('value_payment', 10, 2);
             $table->integer('method_payment'); //pix, cartão, transferencia, especie
             $table->foreignId('enterprise_id')->constrained('enterprises');
         });
