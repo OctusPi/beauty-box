@@ -2,28 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   /* Light Theme Colors */
-  --primary-color-light: #51E5FF; /* Azul claro */
-  --secondary-color-light: #440381; /* Roxo escuro */
-  --accent-color-light: #EC368D; /* Rosa vibrante */
+  --primary-color-light: #A3DDEB; /* Azul claro */
+  --secondary-color-light: #7A5A99; /* Roxo escuro */
+  --accent-color-light: #D48AA1; /* Rosa suave */
   --background-color-light: #FFFFFF; /* Fundo principal claro */
-  --background-secondary-color-light: #F7F7F7; /* Fundo secundário claro */
-  --text-color-light: #000000; /* Texto escuro */
-  --muted-text-color-light: #6c757d; /* Texto mais suave */
+  --background-secondary-color-light: #F0F0F0; /* Fundo secundário claro */
+  --text-color-light: #2D2D2D; /* Texto suave escuro */
+  --muted-text-color-light: #8A8D91; /* Texto ainda mais suave */
+  --warning-color-light: #FFD384; /* Amarelo suave para aviso */
+  --info-color-light: #88C8D4; /* Azul suave para informações */
+
+  /* Input Colors - Light Theme */
+  --input-background-light: #E8E8E8; /* Fundo do input claro */
+  --input-background-focus-light: #D8D8D8; /* Fundo do input claro com foco */
+  --input-placeholder-color-light: #B0B3B6; /* Placeholder claro */
+  --input-border-color-light: #C4C4C4; /* Borda padrão do input claro */
+  --input-border-focus-color-light: #A3DDEB; /* Borda do input claro com foco */
 
   /* Dark Theme Colors */
-  --primary-color-dark: #51E5FF; /* Azul brilhante */
-  --secondary-color-dark: #440381; /* Roxo escuro */
-  --accent-color-dark: #EC368D; /* Rosa vibrante */
-  --background-color-dark: #1E1E1E; /* Fundo principal escuro */
-  --background-secondary-color-dark: #2A2A2A; /* Fundo secundário escuro */
-  --text-color-dark: #FFFFFF; /* Texto claro */
-  --muted-text-color-dark: #b0b3b8; /* Texto mais suave */
+  --primary-color-dark: #A3DDEB; /* Azul */
+  --secondary-color-dark: #7A5A99; /* Roxo escuro */
+  --accent-color-dark: #D48AA1; /* Rosa suave */
+  --background-color-dark: #2E2E2E; /* Fundo principal escuro */
+  --background-secondary-color-dark: #3A3A3A; /* Fundo secundário escuro */
+  --text-color-dark: #E2E2E2; /* Texto suave claro */
+  --muted-text-color-dark: #9CA0A4; /* Texto mais suave */
+  --warning-color-dark: #FFD384; /* Amarelo suave para aviso */
+  --info-color-dark: #88C8D4; /* Azul suave para informações */
+
+  /* Input Colors - Dark Theme */
+  --input-background-dark: #444444; /* Fundo do input escuro */
+  --input-background-focus-dark: #555555; /* Fundo do input escuro com foco */
+  --input-placeholder-color-dark: #A2A2A2; /* Placeholder escuro */
+  --input-border-color-dark: #666666; /* Borda padrão do input escuro */
+  --input-border-focus-color-dark: #A3DDEB; /* Borda do input escuro com foco */
 
   /* Shared Colors */
-  --error-color: #FFA5A5; /* Rosa claro */
-  --success-color: #4CAF50; /* Verde para sucesso */
+  --error-color: #E9B7B7; /* Rosa suave */
+  --success-color: #8BC38A; /* Verde suave para sucesso */
 }
 
 /* Light Theme */
@@ -35,6 +54,13 @@
   --background-secondary-color: var(--background-secondary-color-light);
   --text-color: var(--text-color-light);
   --muted-text-color: var(--muted-text-color-light);
+  --warning-color: var(--warning-color-light);
+  --info-color: var(--info-color-light);
+  --input-background: var(--input-background-light);
+  --input-background-focus: var(--input-background-focus-light);
+  --input-placeholder-color: var(--input-placeholder-color-light);
+  --input-border-color: var(--input-border-color-light);
+  --input-border-focus-color: var(--input-border-focus-color-light);
 }
 
 /* Dark Theme */
@@ -46,7 +72,16 @@
   --background-secondary-color: var(--background-secondary-color-dark);
   --text-color: var(--text-color-dark);
   --muted-text-color: var(--muted-text-color-dark);
+  --warning-color: var(--warning-color-dark);
+  --info-color: var(--info-color-dark);
+  --input-background: var(--input-background-dark);
+  --input-background-focus: var(--input-background-focus-dark);
+  --input-placeholder-color: var(--input-placeholder-color-dark);
+  --input-border-color: var(--input-border-color-dark);
+  --input-border-focus-color: var(--input-border-focus-color-dark);
 }
+
+
 
 *,
 *::before,
@@ -81,4 +116,19 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.text-input{
+  @apply py-2 px-3 rounded-md border font-medium text-base
+  focus:blur-0 shadow-none outline-none;
+
+  color: var(--text-color);
+  background-color: var(--input-background);
+  border-color: var(--input-border-color);
+}
+
+.text-input:focus
+{
+  border-color: var(--input-border-color);
+  background-color: var(--input-background-focus);
 }
